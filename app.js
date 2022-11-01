@@ -70,6 +70,7 @@ app.use(passport.session());
  */
 
 app.get("/", (req, res, next) => {
+  console.log(req.session);
   res.send(`<h1>Hello world (Sessions)</h1>`);
 });
 
@@ -81,4 +82,6 @@ app.use(routes);
  */
 
 // Server listens on http://localhost:3000
-app.listen(3000);
+app.listen(3000, () => {
+  console.log("connected");
+});
